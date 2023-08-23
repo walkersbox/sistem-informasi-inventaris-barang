@@ -216,7 +216,7 @@
       					</div><!-- /.col -->
       					<div class="col-sm-6">
       						<ol class="breadcrumb float-sm-right">
-      							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
+      							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-tambah">
       								Tambah Data
       							</button>
       						</ol>
@@ -253,11 +253,14 @@
 	      										<td>123456</td>
 	      										<td>Sabun</td>
 	      										<td>
-	      											<a href="">
-	      												<i class="fas fa-edit"></i> Edit
+	      											<a href="#">
+	      												<i class="fas fa-info" style="color: black" data-toggle="modal" data-target="#modal-info"></i>
 	      											</a>
-	      											<a href="">
-	      												<i class="fas fa-trash"></i> Hapus
+	      											<a href="#">
+	      												<i class="fas fa-edit" data-toggle="modal" data-target="#modal-edit"></i>
+	      											</a>
+	      											<a href="#">
+	      												<i class="fas fa-trash" style="color: red" data-toggle="modal" data-target="#modal-hapus"></i>
 	      											</a>
 	      										</td>
 	      									</tr>
@@ -292,9 +295,9 @@
 	</div>
 	<!-- ./wrapper -->
 
-	<!-- MOdal Tambah Data -->
-	 <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
+	<!-- Modal Tambah Data -->
+	<div class="modal fade" id="modal-tambah">
+    	<div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Tambah Barang</h4>
@@ -305,8 +308,12 @@
             <form>
             	<div class="modal-body">
             			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" placeholder="Tambahkan Barang ..." required>
+            			</div>
+            			<div class="form-group">
             				<label for="">Barang</label>
-            				<input type="email" class="form-control" id="" placeholder="Tambahkan Barang ...">
+            				<input type="text" class="form-control" id="" placeholder="Barang ..." required>
             			</div>
             		</div>
             		<div class="modal-footer justify-content-between">
@@ -319,6 +326,97 @@
         </div>
         <!-- /.modal-dialog -->
       </div>
+      <!-- /.modal -->
+
+      <!-- Modal Tambah Data -->
+	<div class="modal fade" id="modal-info">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Detail Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" readonly>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Barang</label>
+            				<input type="text" class="form-control" id="" readonly>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Stok</label>
+            				<input type="number" class="form-control" id="" readonly>
+            			</div>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <!-- Modal Edit Data -->
+	<div class="modal fade" id="modal-edit">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" placeholder="Edit Nomor Barang ..." required>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Barang</label>
+            				<input type="email" class="form-control" id="" placeholder="Edit Barang ..." required>
+            			</div>
+            		</div>
+            		<div class="modal-footer justify-content-between">
+            			<button type="button" class="btn btn-danger" data-dismiss="modal"> Kembali</button>
+            			<button type="button" class="btn btn-success swalDefaultSuccess"> Simpan</button>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+      <!-- /.modal -->
+
+      <!-- Modal Hapus Data -->
+	<div class="modal fade" id="modal-hapus">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Hapus Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            		<h5>Yakin Hapus Barang Ini?</h5>
+            		<div class="modal-footer justify-content-between">
+            			<button type="button" class="btn btn-danger" data-dismiss="modal"> Kembali</button>
+            			<button type="button" class="btn btn-success swalDefaultSuccess"> Hapus</button>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
       <!-- /.modal -->
 
 	<!-- jQuery -->

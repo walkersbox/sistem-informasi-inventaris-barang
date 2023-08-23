@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Barang Masuk</title>
+	<title>Barang Keluar</title>
 
 	<!-- Google Font: Source Sans Pro -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,6 +27,8 @@
 	<link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+	<!-- SweetAlert2 -->
+	<link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 	<div class="wrapper">
@@ -213,6 +215,11 @@
       						<h1 class="m-0">Barang Keluar</h1>
       					</div><!-- /.col -->
       					<div class="col-sm-6">
+      						<ol class="breadcrumb float-sm-right">
+      							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-tambah">
+      								Tambah Data
+      							</button>
+      						</ol>
       					</div>
       					<!-- /.col -->
       				</div><!-- /.row -->
@@ -232,23 +239,30 @@
 	      						<!-- /.card-header -->
 	      						<div class="card-body">
 	      							<table id="example1" class="table table-bordered table-striped">
-	      								<thead>
+	      								<thead align="center">
 	      									<tr>
-	      										<th>Rendering engine</th>
-	      										<th>Browser</th>
-	      										<th>Platform(s)</th>
-	      										<th>Engine version</th>
-	      										<th>CSS grade</th>
+	      										<th>No</th>
+	      										<th>Nomor Barang</th>
+	      										<th>Barang</th>
+	      										<th>Aksi</th>
 	      									</tr>
 	      								</thead>
-	      								<tbody>
-	      									
+	      								<tbody align="center">
 	      									<tr>
-	      										<td>Other browsers</td>
-	      										<td>All others</td>
-	      										<td>3</td>
-	      										<td>4</td>
-	      										<td>t6</td>
+	      										<td>1</td>
+	      										<td>123456</td>
+	      										<td>Sabun</td>
+	      										<td>
+	      											<a href="#">
+	      												<i class="fas fa-info" style="color: black" data-toggle="modal" data-target="#modal-info"></i>
+	      											</a>
+	      											<a href="#">
+	      												<i class="fas fa-edit" data-toggle="modal" data-target="#modal-edit"></i>
+	      											</a>
+	      											<a href="#">
+	      												<i class="fas fa-trash" style="color: red" data-toggle="modal" data-target="#modal-hapus"></i>
+	      											</a>
+	      										</td>
 	      									</tr>
 	      								</tbody>
 	      							</table>
@@ -280,6 +294,130 @@
 	  	<!-- /.control-sidebar -->
 	</div>
 	<!-- ./wrapper -->
+
+	<!-- Modal Tambah Data -->
+	<div class="modal fade" id="modal-tambah">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambah Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" placeholder="Tambahkan Barang ..." required>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Barang</label>
+            				<input type="text" class="form-control" id="" placeholder="Barang ..." required>
+            			</div>
+            		</div>
+            		<div class="modal-footer justify-content-between">
+            			<button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
+            			<button type="button" class="btn btn-success swalDefaultSuccess">Simpan</button>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <!-- Modal Tambah Data -->
+	<div class="modal fade" id="modal-info">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Detail Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" readonly>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Barang</label>
+            				<input type="text" class="form-control" id="" readonly>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Stok</label>
+            				<input type="number" class="form-control" id="" readonly>
+            			</div>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <!-- Modal Edit Data -->
+	<div class="modal fade" id="modal-edit">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            			<div class="form-group">
+            				<label for="">Nomor Barang</label>
+            				<input type="text" class="form-control" id="" placeholder="Edit Nomor Barang ..." required>
+            			</div>
+            			<div class="form-group">
+            				<label for="">Barang</label>
+            				<input type="email" class="form-control" id="" placeholder="Edit Barang ..." required>
+            			</div>
+            		</div>
+            		<div class="modal-footer justify-content-between">
+            			<button type="button" class="btn btn-danger" data-dismiss="modal"> Kembali</button>
+            			<button type="button" class="btn btn-success swalDefaultSuccess"> Simpan</button>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+      <!-- /.modal -->
+
+      <!-- Modal Hapus Data -->
+	<div class="modal fade" id="modal-hapus">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Hapus Barang</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            	<div class="modal-body">
+            		<h5>Yakin Hapus Barang Ini?</h5>
+            		<div class="modal-footer justify-content-between">
+            			<button type="button" class="btn btn-danger" data-dismiss="modal"> Kembali</button>
+            			<button type="button" class="btn btn-success swalDefaultSuccess"> Hapus</button>
+            		</div>
+            	</div>
+            </form>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+      <!-- /.modal -->
 
 	<!-- jQuery -->
 	<script src="assets/plugins/jquery/jquery.min.js"></script>
@@ -323,12 +461,14 @@
 	<script src="assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 	<script src="assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 	<script src="assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+	<!-- SweetAlert2 -->
+	<script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 	<!-- Page specific script -->
 	<script>
 		$(function () {
 			$("#example1").DataTable({
 				"responsive": true, "lengthChange": false, "autoWidth": false,
-				"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+				"buttons": ["copy", "excel", "pdf", "print",]
 			}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 			$('#example2').DataTable({
 				"paging": true,
@@ -338,6 +478,18 @@
 				"info": true,
 				"autoWidth": false,
 				"responsive": true,
+			});
+			$('.swalDefaultSuccess').click(function() {
+				Toast.fire({
+					icon: 'success',
+					title: 'Data Berhasil Ditambahkan'
+				})
+			});
+			$('.swalDefaultError').click(function() {
+				Toast.fire({
+					icon: 'error',
+					title: 'Data Gagal Ditambahkan'
+				})
 			});
 		});
 	</script>

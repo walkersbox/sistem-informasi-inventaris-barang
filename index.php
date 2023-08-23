@@ -295,23 +295,30 @@
 	      						<!-- /.card-header -->
 	      						<div class="card-body">
 	      							<table id="example1" class="table table-bordered table-striped">
-	      								<thead>
+	      								<thead align="center">
 	      									<tr>
-	      										<th>Rendering engine</th>
-	      										<th>Browser</th>
-	      										<th>Platform(s)</th>
-	      										<th>Engine version</th>
-	      										<th>CSS grade</th>
+	      										<th>No</th>
+	      										<th>Nomor Barang</th>
+	      										<th>Barang</th>
+	      										<th>Aksi</th>
 	      									</tr>
 	      								</thead>
-	      								<tbody>
-	      									
+	      								<tbody align="center">
 	      									<tr>
-	      										<td>Other browsers</td>
-	      										<td>All others</td>
-	      										<td>3</td>
-	      										<td>4</td>
-	      										<td>t6</td>
+	      										<td>1</td>
+	      										<td>123456</td>
+	      										<td>Sabun</td>
+	      										<td>
+	      											<a href="#">
+	      												<i class="fas fa-info" style="color: black" data-toggle="modal" data-target="#modal-info"></i>
+	      											</a>
+	      											<a href="#">
+	      												<i class="fas fa-edit" data-toggle="modal" data-target="#modal-edit"></i>
+	      											</a>
+	      											<a href="#">
+	      												<i class="fas fa-trash" style="color: red" data-toggle="modal" data-target="#modal-hapus"></i>
+	      											</a>
+	      										</td>
 	      									</tr>
 	      								</tbody>
 	      							</table>
